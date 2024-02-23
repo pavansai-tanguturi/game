@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Treasure Hunt</title>
+    <style>
+        body {
+            margin-top: 25%;
+            padding: 0px;
+            font-family: 'Copperplate', 'Papyrus', 'fantasy','Brush Script MT','Segoe UI', Tahoma,'Geneva', Verdana, sans-serif;
+            background-image: url('images/treasure04.jpg');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 50vh;
+            background-repeat: no-repeat;
+        }
+        
+        .container {
+            padding: 30px;
+            width: 300px;
+            height: 500px;
+            text-align: center;
+            background-image: url('images/treasurer06.png');
+            background-size: cover;
+            background-position: center;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        
+        .container h2 {
+            position: relative;
+            top:15%;
+            left:50%;
+            transform:translate(-50%,-50%);
+            margin-bottom: 20px;
+            font-size: 50px;
+            color: #453504;
+        }
+        
+        .input-group {
+            position: relative;
+            top:20%;
+            left:50%;
+            transform:translate(-50%,-50%);
+            margin-bottom: 20px;
+        }
+        
+        .input-group label {
+            display: block;
+            margin-bottom: 5px;
+            color: #000000;
+            font-size: 18px;
+        }
+        
+        .input-group input {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+        
+        button {
+            position: relative;
+            top:20%;
+            left:53%;
+            transform:translate(-50%,-50%);
+            width: 100%;
+            padding: 10px;
+            background-color: #000408;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            font-size: 16px;
+        }
+        
+        button:hover {
+            background-color: #440d0d;
+        }
+        
+        /* Responsive styles */
+        @media only screen and (max-width: 768px) {
+            body{
+                margin-top: 5%;
+                height: 95vh;
+            }
+            .container {
+                width: 90%;
+                padding: 20px;
+            }
+            
+            .input-group label {
+                font-size: 16px;
+            }
+            
+            .input-group input {
+                width: 50%;
+                font-size: 14px;
+            }
+            
+            button {
+                left: 25%;
+                width: 50%;
+                font-size: 14px;
+            }
+        }
+        
+        </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Login</h2>
+        <div class="input-group">
+            <label class="name">Team name</label>
+            <input type="text" class="username">
+        </div>
+        <div class="input-group">
+            <label class="name">password</label>
+            <input type="password" class="password">
+        </div>
+        <button onclick="submit()">login</button>
+        <p id="error"></p>
+    </div>
+</body>
+    <script>
+        const submit = () =>{
+            const username = document.querySelector(".username").value;
+            const password = document.querySelector(".password").value;
+
+            console.log(username);
+            if("purple"==username && 14==parseInt(password)){
+                location.href="quiz1.html";
+            }
+            else if("blue"==username && 14==parseInt(password)){
+                location.href="quiz2.html";
+            }
+            else if("red"==username && 14==parseInt(password)){
+                location.href="quiz3.html";
+            }
+            else if("green"==username && 14==parseInt(password)){
+                location.href="quiz4.html";
+            }
+            else if("pink"==username && 14==parseInt(password)){
+                location.href="quiz5.html";
+            }
+            else if("white"==username && 14==parseInt(password)){
+                location.href="quiz6.html";
+            }
+            else if("black"==username && 14==parseInt(password)){
+                location.href="quiz7.html";
+            }
+            else if("grey"==username && 14==parseInt(password)){
+                location.href="quiz8.html";
+            }
+            else{
+                document.getElementById("error").innerHTML="Username or Password is incorrect.";
+            }
+        }
+    </script>
+</html>
